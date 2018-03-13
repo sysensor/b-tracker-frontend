@@ -1,6 +1,6 @@
 export class AppConst {
 
-  public static WSO2_APIM_BASE = 'https://localhost:8243';
+  public static WSO2_APIM_BASE = 'http://localhost:8080';
   public static WSO2_TOKEN_API = AppConst.WSO2_APIM_BASE + '/token';
   public static ACCESS_TOKEN = 'ACCESS_TOKEN';
   public static REFRESH_TOKEN = 'REFRESH_TOKEN';
@@ -11,4 +11,5 @@ export class AppConst {
 
   public static WSO2_APP_CLIENT_SECRET = 'RnhGWVRBOGR5cGNmenBVYmtwc3dmTm1xZUo4YTpDcmhJTmhlOENwVDlQY2Y4d2pVbkhRVmdGQVFh';
 
+  public static GOOGLE_MAPS_API_KEY = "AIzaSyB4w0Jd1rAVU3XjQSGPGRPA2vYvwX9KL1E";
 }

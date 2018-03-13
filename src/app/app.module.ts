@@ -10,6 +10,8 @@ import {CommonModule} from "@angular/common";
 import {AgmCoreModule} from "@agm/core";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import {AppAuthInterceptor} from "./service/app-auth-interceptor";
+import {AppBasicAuthInterceptor} from "./service/app-basic-auth-intercepter";
+import {AppConst} from "./service/app-const";
 
 
 @NgModule({
@@ -25,12 +27,12 @@ import {AppAuthInterceptor} from "./service/app-auth-interceptor";
       { path: '', component: MapComponent },
       { path: 'login', component: LoginComponent }]),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyB4w0Jd1rAVU3XjQSGPGRPA2vYvwX9KL1E'
+      apiKey: AppConst.GOOGLE_MAPS_API_KEY
     })
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
-    useClass: AppAuthInterceptor,
+    useClass: AppBasicAuthInterceptor,
     multi: true
   }],
   bootstrap: [AppComponent]

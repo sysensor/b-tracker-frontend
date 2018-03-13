@@ -42,7 +42,7 @@ export class TokenService {
 
     //this._http.post("",gpsData,options);
 
-    const req = this._http.post(AppConst.WSO2_APIM_BASE + '/gps/api/signal', gpsData)
+    const req = this._http.post(AppConst.WSO2_APIM_BASE + '/api/signal', gpsData)
       .subscribe(
         res => {
           console.log(res);
@@ -56,7 +56,7 @@ export class TokenService {
   }
 
   getGPSCoordinatesFromBackEnd() {
-    return this._http.get<GPSCoordinates>(AppConst.WSO2_APIM_BASE + '/gps/api/signal');
+    return this._http.get<GPSCoordinates>(AppConst.WSO2_APIM_BASE + '/api/signal');
   }
 
 }
