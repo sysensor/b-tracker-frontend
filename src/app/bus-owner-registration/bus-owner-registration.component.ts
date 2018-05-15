@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class BusOwnerRegistrationComponent implements OnInit {
   public busOwner : BusOwner;
 
-  constructor() { }
+  constructor() {
+    this.busOwner = new BusOwner();
+  }
 
   ngOnInit() {
   }

@@ -2,6 +2,7 @@ import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import {AppConst} from "./app-const";
+import {LoginComponent} from "../login/login.component";
 
 
 @Injectable()
@@ -10,7 +11,7 @@ export class TokenService {
   constructor(private _router: Router, private _http: HttpClient) {
   }
 
-  validateUserLogin(loginData) {
+  public validateUserLogin(loginData) {
     const req = this._http.post<Token>(AppConst.WSO2_TOKEN_API + '?grant_type=password&username=' + loginData.username + '&password=' + loginData.password + '&scope=SCOPE_GPS_PUBLISHER SCOPE_GPS_RECEIVER', null)
       .subscribe(
         res => {
