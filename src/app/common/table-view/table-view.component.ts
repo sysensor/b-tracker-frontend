@@ -1,4 +1,5 @@
 import {Component, OnInit, Input} from "@angular/core";
+import {ITableView} from "../interface/ITableView";
 
 @Component({
     selector: 'app-table-view',
@@ -7,7 +8,7 @@ import {Component, OnInit, Input} from "@angular/core";
 })
 export class TableViewComponent implements OnInit {
     @Input()
-    headers: any[];
+    tableView: ITableView;
 
     constructor() {
     }

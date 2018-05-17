@@ -24,7 +24,7 @@ describe('TableViewComponent', () => {
   });
 
   it('table headers should match with the parameters', () => {
-    component.headers = ['Registration Number', 'Bus Route'];
+    component.tableView={'headers':['Registration Number', 'Bus Route']};
     fixture.detectChanges();
     let ths = fixture.nativeElement.querySelectorAll('th');
     expect(ths).toBeTruthy();

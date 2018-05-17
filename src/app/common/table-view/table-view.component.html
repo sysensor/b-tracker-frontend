@@ -1,3 +1,7 @@
-<table>
-    <th *ngFor="let header of headers">{{header}}</th>
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th *ngFor="let header of tableView?.headers">{{header}}</th>
+    </tr>
+    </thead>
 </table>
