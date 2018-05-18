@@ -10,7 +10,7 @@ describe('BusOwnerRegistrationComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [BusOwnerRegistrationComponent],
-            imports: [RouterTestingModule,NgModel]
+            imports: [RouterTestingModule, NgModel]
         })
             .compileComponents();
     }));
@@ -21,7 +21,7 @@ describe('BusOwnerRegistrationComponent', () => {
         fixture.detectChanges();
     });
 
-    it('should create', () => {
+    fit('should create', () => {
         expect(component).toBeTruthy();
     });
 });

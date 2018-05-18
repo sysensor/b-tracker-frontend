@@ -12,6 +12,7 @@ import {AppBasicAuthInterceptor} from "./service/app-basic-auth-intercepter";
 import {AppConst} from "./service/app-const";
 import {BusOwnerRegistrationComponent} from "./bus-owner-registration/bus-owner-registration.component";
 import { TableViewComponent } from './common/table-view/table-view.component';
+import {BusOwner} from "./model/BusOwner";
 
 
 @NgModule({

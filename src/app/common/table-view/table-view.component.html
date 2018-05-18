@@ -1,7 +1,12 @@
-<table class="table">
-    <thead class="thead-dark">
+<table class="table table-fixed">
+    <thead class="thead-light">
     <tr>
         <th *ngFor="let header of tableView?.headers">{{header}}</th>
     </tr>
     </thead>
+    <tbody>
+    <tr *ngFor="let row of tableView?.rows" (click)="rowSelection(row)">
+        <td *ngFor="let ele of row">{{ele}}</td>
+    </tr>
+    </tbody>
 </table>

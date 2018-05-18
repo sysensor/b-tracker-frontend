@@ -3,7 +3,7 @@
     <form role="form" novalidate>
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" class="form-control" [(ngModel)]="busOwner.name"/>
+            <input type="text" name="name" id="name" class="form-control" [(ngModel)]="busOwner.name" require/>
         </div>
         <div class="form-group">
             <label for="address">Address</label>
@@ -27,7 +27,9 @@
         <div class="form-actions">
             <button type="submit" class="btn btn-primary">Register</button>
             <a href="#!/login" class="btn btn-link">Cancel</a>
+            <button type="button" class="btn btn-primary" (click)="updateTheTableView()">Register</button>
         </div>
     </form>
-    <app-table-view [tableView]="{headers:['Registration Number', 'Bus Route']}"></app-table-view>
+    <br/>
+    <app-table-view [tableView]="tableViewForBusOwner" (eventTableRowSelection)="rowSlectionInBusCollection($event)"></app-table-view>
 </div>
