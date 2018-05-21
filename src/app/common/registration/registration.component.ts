@@ -14,16 +14,16 @@ export class RegistrationComponent implements OnInit {
     extraButtonUrl: string = "/extra";
     registration: IRegistration;
     @Output()
-    registerEvent: EventEmitter<any[]> = new EventEmitter<any[]>();
+    registerEvent: EventEmitter<IRegistration> = new EventEmitter<IRegistration>();
 
 
     constructor() {
-        this.registration = {name: '', address: '', phone: '', username: '', password: ''};
+        this.registration = {name: '', address: '', phone: null, username: '', password: ''};
     }
 
-    registerUser(form: NgForm) {
-        console.log(form.value);
-        this.registerEvent.emit(form.value);
+    registerUser() {
+        console.log(this.registration);
+        this.registerEvent.emit(this.registration);
     }
 
     ngOnInit() {

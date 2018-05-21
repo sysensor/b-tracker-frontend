@@ -3,7 +3,7 @@ import {NgModule} from "@angular/core";
 import {AppComponent} from "./app.component";
 import {LoginComponent} from "./login/login.component";
 import {RouterModule} from "@angular/router";
-import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http";
+import {HttpClientModule, HTTP_INTERCEPTORS, HttpClient} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {MapComponent} from "./map/map.component";
 import {CommonModule} from "@angular/common";
@@ -11,9 +11,8 @@ import {AgmCoreModule} from "@agm/core";
 import {AppBasicAuthInterceptor} from "./service/app-basic-auth-intercepter";
 import {AppConst} from "./app-const";
 import {BusOwnerRegistrationComponent} from "./bus-owner-registration/bus-owner-registration.component";
-import { TableViewComponent } from './common/table-view/table-view.component';
-import {BusOwner} from "./model/BusOwner";
-import { RegistrationComponent } from './common/registration/registration.component';
+import {TableViewComponent} from "./common/table-view/table-view.component";
+import {RegistrationComponent} from "./common/registration/registration.component";
 
 
 @NgModule({
