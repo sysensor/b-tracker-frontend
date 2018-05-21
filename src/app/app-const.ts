@@ -9,6 +9,8 @@ export class AppConst {
   public static TOKEN_EXPIRE = 'TOKEN_EXPIRE';
   public static APP_ERROR = 'APP_ERROR';
 
+  public static LOGIN_ROUTE = 'login';
+
   public static WSO2_APP_CLIENT_SECRET = 'RnhGWVRBOGR5cGNmenBVYmtwc3dmTm1xZUo4YTpDcmhJTmhlOENwVDlQY2Y4d2pVbkhRVmdGQVFh';
 
   public static GOOGLE_MAPS_API_KEY = "AIzaSyB4w0Jd1rAVU3XjQSGPGRPA2vYvwX9KL1E";

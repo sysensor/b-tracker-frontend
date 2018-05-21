@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {MouseEvent} from "@agm/core";
 import {TokenService} from "../service/token-service";
-import {AppConst} from "../service/app-const";
+import {AppConst} from "../app-const";
 import {Router} from "@angular/router";
 
 @Component({

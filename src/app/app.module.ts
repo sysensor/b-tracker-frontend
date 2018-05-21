@@ -9,15 +9,16 @@ import {MapComponent} from "./map/map.component";
 import {CommonModule} from "@angular/common";
 import {AgmCoreModule} from "@agm/core";
 import {AppBasicAuthInterceptor} from "./service/app-basic-auth-intercepter";
-import {AppConst} from "./service/app-const";
+import {AppConst} from "./app-const";
 import {BusOwnerRegistrationComponent} from "./bus-owner-registration/bus-owner-registration.component";
 import { TableViewComponent } from './common/table-view/table-view.component';
 import {BusOwner} from "./model/BusOwner";
+import { RegistrationComponent } from './common/registration/registration.component';
 
 
 @NgModule({
     declarations: [
-        AppComponent, LoginComponent, MapComponent, BusOwnerRegistrationComponent, TableViewComponent
+        AppComponent, LoginComponent, MapComponent, BusOwnerRegistrationComponent, TableViewComponent, RegistrationComponent
     ],
     imports: [
         BrowserModule,

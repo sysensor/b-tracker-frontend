@@ -1,0 +1,31 @@
+<h2>Bus Owner Registration</h2>
+<form #signupForm="ngForm" role="form" (ngSubmit)="registerUser(signupForm)">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" class="form-control" [(ngModel)]="registration.name" required/>
+    </div>
+    <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address" class="form-control" [(ngModel)]="registration.address"
+               required/>
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="number" name="phone" id="phone" class="form-control" [(ngModel)]="registration.phone" required/>
+    </div>
+    <div class="form-group">
+        <label for="username">User Name</label>
+        <input type="email" name="username" id="username" class="form-control" [(ngModel)]="registration.username"
+               required/>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="form-control" [(ngModel)]="registration.password"
+               required/>
+    </div>
+    <br/>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Register</button>
+        <a href="{{extraButtonUrl}}" class="btn btn-link">{{extraButtonName}}</a>
+    </div>
+</form>

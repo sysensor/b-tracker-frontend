@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpEvent, HttpInterceptor, HttpHandler, HttpRequest} from "@angular/common/http";
 import {Observable} from "rxjs/observable";
-import {AppConst} from "./app-const";
+import {AppConst} from "../app-const";
 
 @Injectable()
 export class AppBasicAuthInterceptor implements HttpInterceptor {

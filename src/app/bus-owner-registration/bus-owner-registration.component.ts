@@ -1,17 +1,20 @@
-import {Component, OnInit, Input} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {BusOwner} from "../model/BusOwner";
 import {ModelConverter} from "../converter/ModelConverter";
 import {ITableView} from "../common/interface/ITableView";
+import {AppConst} from "../app-const";
 
 @Component({
     selector: 'app-bus-owner-registration',
     templateUrl: './bus-owner-registration.component.html',
     styleUrls: ['./bus-owner-registration.component.css']
 })
-export class BusOwnerRegistrationComponent implements OnInit{
+export class BusOwnerRegistrationComponent implements OnInit {
     busOwner: BusOwner;
-    tableViewForBusOwner:ITableView;
-    modelConverter:ModelConverter;
+    tableViewForBusOwner: ITableView;
+    modelConverter: ModelConverter;
+    loginButtonName: string = "BusOwner Login";
+    loginURL: string = "/" + AppConst.LOGIN_ROUTE;
 
     constructor() {
         this.busOwner = new BusOwner();
@@ -19,15 +22,22 @@ export class BusOwnerRegistrationComponent implements OnInit{
     }
 
     ngOnInit() {
-        this.tableViewForBusOwner = {headers:['Registration Number', 'Bus Route'], rows:[]};
+        this.tableViewForBusOwner = {headers: ['Registration Number', 'Bus Route'], rows: []};
     }
 
-    updateTheTableView(){
+    registerUserDetails(formData: any) {
+        console.log(formData)
+    }
+
+    updateTheTableView() {
         //console.log("Test");
-        this.tableViewForBusOwner = {headers:['Registration Number', 'Bus Route'], rows:[['Registration Number', 'Bus Route'],['Registration Number', 'Bus Route']]};
+        this.tableViewForBusOwner = {
+            headers: ['Registration Number', 'Bus Route'],
+            rows: [['Registration Number', 'Bus Route'], ['Registration Number', 'Bus Route']]
+        };
     }
 
-    rowSlectionInBusCollection(event:any){
+    rowSlectionInBusCollection(event: any) {
         console.log(event)
     }
 }

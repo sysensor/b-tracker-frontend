@@ -1,7 +1,7 @@
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
-import {AppConst} from "./app-const";
+import {AppConst} from "../app-const";
 import {LoginComponent} from "../login/login.component";
 
 
