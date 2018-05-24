@@ -5,6 +5,9 @@ import {NgModel, FormsModule} from "@angular/forms";
 import {BrowserModule} from "@angular/platform-browser";
 import {RegistrationComponent} from "../common/registration/registration.component";
 import {TableViewComponent} from "../common/table-view/table-view.component";
+import {BusOwnerService} from "../service/bus-owner-service";
+import {Router} from "@angular/router";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('BusOwnerRegistrationComponent', () => {
     let component: BusOwnerRegistrationComponent;
@@ -12,8 +15,9 @@ describe('BusOwnerRegistrationComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [BrowserModule,FormsModule],
-            declarations: [BusOwnerRegistrationComponent,RegistrationComponent,TableViewComponent]
+            imports: [BrowserModule,FormsModule, HttpClientTestingModule],
+            declarations: [BusOwnerRegistrationComponent,RegistrationComponent,TableViewComponent],
+            providers:[BusOwnerService]
         })
             .compileComponents();
     }));

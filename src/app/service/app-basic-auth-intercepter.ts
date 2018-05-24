@@ -14,7 +14,7 @@ export class AppBasicAuthInterceptor implements HttpInterceptor {
             });
         } else {
             authReq = req.clone({
-                headers: req.headers.set('Authorization', 'Basic YWRtaW46YWRtaW4=')
+                headers: req.headers.set('Authorization', 'Basic ' + btoa('admin:admin'))
                     .set('Content-Type', 'application/json').set('Accept', 'application/json')
             });
         }
