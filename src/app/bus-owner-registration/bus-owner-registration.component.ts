@@ -1,6 +1,5 @@
 import {Component, OnInit} from "@angular/core";
 import {BusOwner} from "../model/BusOwner";
-import {ModelConverter} from "../converter/ModelConverter";
 import {AppConst} from "../app-const";
 import {BusOwnerService} from "../service/bus-owner-service";
 import {IRegistration} from "../common/interface/IRegistration";
@@ -12,21 +11,35 @@ import {IRegistration} from "../common/interface/IRegistration";
     styleUrls: ['./bus-owner-registration.component.css']
 })
 export class BusOwnerRegistrationComponent implements OnInit {
-    busOwner: BusOwner;
-    modelConverter: ModelConverter;
-    loginButtonName: string = "BusOwner Login";
-    loginURL: string = "/" + AppConst.LOGIN_ROUTE;
+    private posting: boolean;
+    private registration: IRegistration;
+    private title: string;
+    private loginButtonName: string;
+    private loginURL: string;
+    private success: boolean;
+    private message: string;
 
-    constructor(public busOwnerService: BusOwnerService) {
-        this.busOwner = new BusOwner();
-        this.modelConverter = new ModelConverter();
+    constructor(public _busOwnerService: BusOwnerService) {
+        this.reloadDataModel();
     }
 
     ngOnInit() {
+        this.posting = false;
+        this.title = "Bus Owner Registration";
+        this.loginButtonName = "BusOwner Login";
+        this.loginURL = "/" + AppConst.LOGIN_ROUTE;
+        this.success = false;
+        this.message = "";
+        this.reloadDataModel();
     }
 
-    registerUserDetails(regData: IRegistration) {
-        console.log(regData)
+    reloadDataModel() {
+        this.registration = {name: '', address: '', phone: null, username: '', password: ''};
+    }
+
+    registerBusOwnerDetails(regData: IRegistration) {
+        this.posting = true;
+        console.log(regData);
         let busOwner: BusOwner = new BusOwner();
         busOwner.name = regData.name;
         busOwner.address = regData.address;
@@ -34,6 +47,22 @@ export class BusOwnerRegistrationComponent implements OnInit {
         busOwner.username = regData.username;
         busOwner.password = regData.password;
 
-        this.busOwnerService.registerBusOwner(busOwner);
+        this._busOwnerService.registerBusOwner(busOwner).then(
+            result => {
+                this.posting = false;
+                this.success = true;
+                this.message = "Bus owner " + busOwner.name + " successfully registered";
+                this.reloadDataModel();
+            },
+            err => {
+                this.posting = false;
+                this.success = false;
+                this.message = err;
+            }
+        ).catch(err => {
+            this.posting = false;
+            this.success = false;
+            this.message = err;
+        });
     }
 }

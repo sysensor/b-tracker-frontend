@@ -1,5 +1,10 @@
-<h2>Bus Owner Registration</h2>
-<form #signupForm="ngForm" role="form" (ngSubmit)="registerUser()">
+<div id="container">
+    <div style="display: inline-block;"><h1>{{title}}</h1></div>
+    <div *ngIf="posting" style="display: inline-block;" class="loader pull-right">
+    </div>
+</div>
+
+<form #signupForm="ngForm" role="form" (ngSubmit)="register()">
     <div class="form-group">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" class="form-control" [(ngModel)]="registration.name" required/>
@@ -11,7 +16,7 @@
     </div>
     <div class="form-group">
         <label for="phone">Phone Number</label>
-        <input type="number" name="phone" id="phone" class="form-control" [(ngModel)]="registration.phone" required/>
+        <input type="number" name="phone" id="phone" class="form-control" [(ngModel)]="registration.phone"/>
     </div>
     <div class="form-group">
         <label for="username">User Name</label>
@@ -29,3 +34,11 @@
         <a href="{{extraButtonUrl}}" class="btn btn-link">{{extraButtonName}}</a>
     </div>
 </form>
+<hr/>
+<div class="alert alert-success" *ngIf="message && success">
+    {{message}}
+</div>
+
+<div class="alert alert-danger" *ngIf="message && !success">
+    {{message}}
+</div>

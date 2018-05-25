@@ -1,6 +1,5 @@
 import {Component, OnInit, EventEmitter, Output, Input} from "@angular/core";
 import {IRegistration} from "../interface/IRegistration";
-import {NgForm} from "@angular/forms";
 
 @Component({
     selector: 'app-registration',
@@ -9,24 +8,38 @@ import {NgForm} from "@angular/forms";
 })
 export class RegistrationComponent implements OnInit {
     @Input()
-    extraButtonName: string = "Extra Button";
+    title: string;
     @Input()
-    extraButtonUrl: string = "/extra";
+    extraButtonName: string;
+    @Input()
+    extraButtonUrl: string;
+    @Input()
     registration: IRegistration;
+    @Input()
+    posting: boolean;
+    @Input()
+    success: boolean;
+    @Input()
+    message: string;
     @Output()
-    registerEvent: EventEmitter<IRegistration> = new EventEmitter<IRegistration>();
-
+    registerEvent: EventEmitter<IRegistration>;
 
     constructor() {
         this.registration = {name: '', address: '', phone: null, username: '', password: ''};
     }
 
-    registerUser() {
+    ngOnInit() {
+        this.title = "Registration";
+        this.extraButtonName = "[Extra Button]";
+        this.extraButtonUrl = "/extra";
+        this.posting = false;
+        this.success = true;
+        this.message = "";
+        this.registerEvent = new EventEmitter<IRegistration>();
+    }
+
+    register() {
         console.log(this.registration);
         this.registerEvent.emit(this.registration);
     }
-
-    ngOnInit() {
-    }
-
 }

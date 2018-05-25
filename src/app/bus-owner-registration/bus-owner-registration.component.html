@@ -1,3 +1,6 @@
 <div class="col-md-6 col-md-offset-3">
-    <app-registration [extraButtonName]="loginButtonName" [extraButtonUrl]="loginURL" (registerEvent)="registerUserDetails($event)"></app-registration>
+    <app-registration [title]="title" [extraButtonName]="loginButtonName" [extraButtonUrl]="loginURL"
+                      [posting]="posting" [registration]="registration"
+                      [success]="success" [message]="message"
+                      (registerEvent)="registerBusOwnerDetails($event)"></app-registration>
 </div>
