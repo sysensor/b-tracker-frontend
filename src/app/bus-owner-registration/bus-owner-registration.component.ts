@@ -20,10 +20,6 @@ export class BusOwnerRegistrationComponent implements OnInit {
     private message: string;
 
     constructor(public _busOwnerService: BusOwnerService) {
-        this.reloadDataModel();
-    }
-
-    ngOnInit() {
         this.posting = false;
         this.title = "Bus Owner Registration";
         this.loginButtonName = "BusOwner Login";
@@ -31,6 +27,9 @@ export class BusOwnerRegistrationComponent implements OnInit {
         this.success = false;
         this.message = "";
         this.reloadDataModel();
+    }
+
+    ngOnInit() {
     }
 
     reloadDataModel() {

@@ -27,15 +27,15 @@ export class RegistrationComponent implements OnInit {
     constructor() {
         this.registration = {name: '', address: '', phone: null, username: '', password: ''};
         this.registerEvent = new EventEmitter<IRegistration>();
-    }
-
-    ngOnInit() {
         this.title = "Registration";
         this.extraButtonName = "[Extra Button]";
         this.extraButtonUrl = "/extra";
         this.posting = false;
-        this.success = true;
+        this.success = false;
         this.message = "";
+    }
+
+    ngOnInit() {
     }
 
     register() {
