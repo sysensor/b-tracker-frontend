@@ -16,7 +16,7 @@ export class RegistrationComponent implements OnInit {
     @Input()
     registration: IRegistration;
     @Input()
-    posting: boolean;
+    showSpinning: boolean;
     @Input()
     success: boolean;
     @Input()
@@ -30,7 +30,7 @@ export class RegistrationComponent implements OnInit {
         this.title = "Registration";
         this.extraButtonName = "[Extra Button]";
         this.extraButtonUrl = "/extra";
-        this.posting = false;
+        this.showSpinning = false;
         this.success = false;
         this.message = "";
     }

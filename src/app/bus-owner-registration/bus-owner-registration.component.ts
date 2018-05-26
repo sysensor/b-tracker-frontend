@@ -11,7 +11,7 @@ import {IRegistration} from "../common/interface/IRegistration";
     styleUrls: ['./bus-owner-registration.component.css']
 })
 export class BusOwnerRegistrationComponent implements OnInit {
-    private posting: boolean;
+    private showSpinning: boolean;
     private registration: IRegistration;
     private title: string;
     private loginButtonName: string;
@@ -20,7 +20,7 @@ export class BusOwnerRegistrationComponent implements OnInit {
     private message: string;
 
     constructor(public _busOwnerService: BusOwnerService) {
-        this.posting = false;
+        this.showSpinning = false;
         this.title = "Bus Owner Registration";
         this.loginButtonName = "BusOwner Login";
         this.loginURL = "/" + AppConst.LOGIN_ROUTE;
@@ -37,7 +37,7 @@ export class BusOwnerRegistrationComponent implements OnInit {
     }
 
     registerBusOwnerDetails(regData: IRegistration) {
-        this.posting = true;
+        this.showSpinning = true;
         console.log(regData);
         let busOwner: BusOwner = new BusOwner();
         busOwner.name = regData.name;
@@ -48,18 +48,18 @@ export class BusOwnerRegistrationComponent implements OnInit {
 
         this._busOwnerService.registerBusOwner(busOwner).then(
             result => {
-                this.posting = false;
+                this.showSpinning = false;
                 this.success = true;
                 this.message = "Bus owner " + busOwner.name + " successfully registered";
                 this.reloadDataModel();
             },
             err => {
-                this.posting = false;
+                this.showSpinning = false;
                 this.success = false;
                 this.message = err;
             }
         ).catch(err => {
-            this.posting = false;
+            this.showSpinning = false;
             this.success = false;
             this.message = err;
         });
