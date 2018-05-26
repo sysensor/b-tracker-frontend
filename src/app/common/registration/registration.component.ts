@@ -26,6 +26,7 @@ export class RegistrationComponent implements OnInit {
 
     constructor() {
         this.registration = {name: '', address: '', phone: null, username: '', password: ''};
+        this.registerEvent = new EventEmitter<IRegistration>();
     }
 
     ngOnInit() {
@@ -35,7 +36,6 @@ export class RegistrationComponent implements OnInit {
         this.posting = false;
         this.success = true;
         this.message = "";
-        this.registerEvent = new EventEmitter<IRegistration>();
     }
 
     register() {
