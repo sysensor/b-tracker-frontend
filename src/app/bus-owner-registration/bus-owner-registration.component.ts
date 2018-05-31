@@ -51,7 +51,6 @@ export class BusOwnerRegistrationComponent implements OnInit {
                 this.showSpinning = false;
                 this.success = true;
                 this.message = "Bus owner " + busOwner.name + " successfully registered";
-                this.reloadDataModel();
             },
             err => {
                 this.showSpinning = false;

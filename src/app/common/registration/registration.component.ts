@@ -1,5 +1,6 @@
-import {Component, OnInit, EventEmitter, Output, Input} from "@angular/core";
+import {Component, OnInit, EventEmitter, Output, Input, ViewChild, ElementRef} from "@angular/core";
 import {IRegistration} from "../interface/IRegistration";
+import {FormGroup} from "@angular/forms";
 
 @Component({
     selector: 'app-registration',
@@ -23,6 +24,8 @@ export class RegistrationComponent implements OnInit {
     message: string;
     @Output()
     registerEvent: EventEmitter<IRegistration>;
+    @ViewChild('signupForm')
+    form: FormGroup;
 
     constructor() {
         this.registration = {name: '', address: '', phone: null, username: '', password: ''};
@@ -41,5 +44,6 @@ export class RegistrationComponent implements OnInit {
     register() {
         console.log(this.registration);
         this.registerEvent.emit(this.registration);
+        this.form.reset();
     }
 }
