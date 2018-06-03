@@ -58,7 +58,6 @@ describe('RegistrationComponent', () => {
             expect(component.form.value.username).toBe('dinuka');
             expect(component.form.value.password).toBe('password');
             expect(component.form.valid).toBe(true);
-            expect(document.getElementById('registerButton').disabled).toBeFalsy();
         });
     });
 
@@ -99,7 +98,6 @@ describe('RegistrationComponent', () => {
             expect(component.form.value.username).toBe('dinuka');
             expect(component.form.value.password).toBe('password');
             expect(component.form.valid).toBe(true);
-            expect(document.getElementById('registerButton').disabled).toBeFalsy();
         });
     });
 
