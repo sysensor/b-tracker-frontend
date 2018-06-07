@@ -13,9 +13,10 @@ export class AppConst {
     public static LOGIN_ROUTE = 'login';
 
     //BackEnd APIs
-    public static API_BASE = 'http://localhost:8080';
+    public static API_BASE = 'http://localhost:9090/gateway/';
+    public static DATA_SERVICE = 'data-service';
     public static DATA = 'data';
-    public static DATA_API_BUS_OWNER = AppConst.API_BASE + '/' + AppConst.DATA +'/bus-owner';
+    public static DATA_API_BUS_OWNER = AppConst.API_BASE + '/' + AppConst.DATA_SERVICE + '/' + AppConst.DATA + '/bus-owner';
 
     public static WSO2_APP_CLIENT_SECRET = 'RnhGWVRBOGR5cGNmenBVYmtwc3dmTm1xZUo4YTpDcmhJTmhlOENwVDlQY2Y4d2pVbkhRVmdGQVFh';
 
