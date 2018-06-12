@@ -1,6 +1,6 @@
 {
-  "name": "b-tracker-frontend",
-  "version": "0.0.0",
+  "name": "pts-frontend",
+  "version": "1.0.1-SNAPSHOT",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
